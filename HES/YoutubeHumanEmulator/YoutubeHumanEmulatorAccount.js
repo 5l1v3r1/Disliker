@@ -48,6 +48,8 @@ class YoutubeHumanEmulatorAccount extends HumanEmulatorAccount {
 
             return true;
         } catch (error) {
+            console.error(error);
+
             return false;
         }
     }

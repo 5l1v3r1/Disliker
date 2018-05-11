@@ -6,6 +6,7 @@
   "dependencies": {
     "async": "^2.6.0",
     "config": "^1.30.0",
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "hbs": "^4.0.1",

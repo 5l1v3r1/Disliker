@@ -20,8 +20,10 @@ class Service extends EventEmitter {
             console.info('Connected!');
 
             if (this._socket === null) {
+                this._socket = socket;
+
                 socket.write(this._key.exportKey('pkcs1-public'));
-                socket.on('data', this._handlePublicKey.bind(this, socket));
+                socket.on('data', this._handlePublicKey.bind(this));
                 socket.on('error', (error) => {
                     console.error(error);
                 });
@@ -38,6 +40,7 @@ class Service extends EventEmitter {
 
     _handlePublicKey(data) {
         this._clientKey.importKey(data, 'pkcs1-public');
+        this._socket.on('data', this._handleRequest.bind(this));
     }
 
     _handleRequest(data) {

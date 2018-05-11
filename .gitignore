@@ -4,3 +4,4 @@ accounts.json
 package-lock.json
 config
 test.js
+.env
