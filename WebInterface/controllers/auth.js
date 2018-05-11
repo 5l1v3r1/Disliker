@@ -5,12 +5,12 @@ const passport = require('passport');
 module.exports = app => {
     app.get(
         '/login',
-        passport.authenticate('github')
+        passport.authenticate('google', { scope: ['profile'] })
     );
 
     app.get(
         '/login/return',
-        passport.authenticate('github'),
+        passport.authenticate('google'),
         (req, res) => {
             res.redirect('/');
         }
