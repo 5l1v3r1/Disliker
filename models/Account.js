@@ -1,8 +1,8 @@
 'use strict';
 
-const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
 
-const AccountSchema = new Schema({
+const AccountSchema = new mongoose.Schema({
     login: {
         type: String,
         index: true,
@@ -12,7 +12,7 @@ const AccountSchema = new Schema({
         type: Number,
         required: true
     },
-    data: Schema.Types.Mixed
+    data: mongoose.Schema.Types.Mixed
 });
 
-module.exports = model('Account', AccountSchema);
+module.exports = mongoose.model('Account', AccountSchema);

@@ -1,11 +1,12 @@
 'use strict';
 
-const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
 
-const TaskSchema = new Schema({
+const TaskSchema = new mongoose.Schema({
     user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
+        index: true
     },
     service: {
         type: Number,
@@ -19,7 +20,7 @@ const TaskSchema = new Schema({
         type: Number,
         required: true
     },
-    data: Schema.Types.Mixed
+    data: mongoose.Schema.Types.Mixed
 });
 
-module.exports = model('Task', TaskSchema);
+module.exports = mongoose.model('Task', TaskSchema);
