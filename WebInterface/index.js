@@ -8,6 +8,7 @@ const passport = require('passport');
 const config = require('config');
 const mongoose = require('mongoose');
 const session = require('express-session');
+const bodyParser = require('body-parser');
 
 const app = express();
 
@@ -18,6 +19,7 @@ const partialsDir = path.join(viewsDir, 'partials');
 app.set('view engine', 'hbs');
 app.set('views', viewsDir);
 
+app.use(bodyParser.json());
 app.use(express.static(staticDir));
 app.use(session({
     secret: config.get('cookieSecret'),

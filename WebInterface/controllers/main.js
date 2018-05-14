@@ -1,11 +1,18 @@
 'use strict';
 
+const Task = require('../../models/Task');
+
 module.exports = app => {
-    app.get('/', (req, res) => {
+    app.get('/', async (req, res) => {
         if (req.isAuthenticated()) {
-            res.render('index', { user: req.user });
+            const tasks = await Task.find({ user: req.user._id }).sort({ createdAt: -1 });
+
+            res.render('index', {
+                user: req.user,
+                task: JSON.stringify(tasks)
+            });
         } else {
-            res.redirect('http://localhost:8080/login');
+            res.redirect('/login');
         }
     });
 };

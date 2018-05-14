@@ -1,7 +1,7 @@
 <form>
     <div class="row">
         <div class="col">
-            <input v-model="videoId" type="text" id="video-id" class="form-control" placeholder="video id"/>
+            <input v-model="channelId" type="text" id="video-id" class="form-control" placeholder="channel id"/>
         </div>
         <div class="col action-selector">
             <div class="form-check form-check-inline ">
@@ -19,7 +19,7 @@
             </div>
         </div>
         <div class="col">
-            <input type="button" v-on:click="likeOrDis" class="btn btn-primary" value="Start"/>
+            <input type="button" v-on:click="subscribe" class="btn btn-primary" value="Start"/>
         </div>
     </div>
 </form>

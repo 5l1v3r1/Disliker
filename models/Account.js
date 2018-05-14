@@ -12,6 +12,10 @@ const AccountSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    donater: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+    },
     data: mongoose.Schema.Types.Mixed
 });
 

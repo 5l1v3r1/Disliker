@@ -2,14 +2,14 @@
     <div class="row">
         <div class="col form-group">
             <label for="donate-login">Логин (без @gmail.com)</label>
-            <input type="text" class="form-control" id="donate-login"/>
+            <input v-model="login" type="text" class="form-control" id="donate-login"/>
         </div>
         <div class="col form-group">
             <label for="donate-password">Пароль</label>
-            <input type="text" class="form-control" id="donate-password"/>
+            <input v-model="password" type="text" class="form-control" id="donate-password"/>
         </div>
     </div>
     <div class="form-group">
-        <input type="button" class="btn btn-primary" value="Пожертвовать"/>
+        <input v-on:click="donate" type="button" class="btn btn-primary" value="Пожертвовать"/>
     </div>
 </form>

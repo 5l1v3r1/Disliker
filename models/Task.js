@@ -20,7 +20,15 @@ const TaskSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
-    data: mongoose.Schema.Types.Mixed
+    createdAt: {
+        type: Date,
+        default: Date.now
+    },
+    data: mongoose.Schema.Types.Mixed,
+    result: {
+        type: mongoose.Schema.Types.Mixed,
+        default: {}
+    }
 });
 
 module.exports = mongoose.model('Task', TaskSchema);

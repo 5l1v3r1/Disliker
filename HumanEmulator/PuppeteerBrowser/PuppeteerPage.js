@@ -41,6 +41,26 @@ class PuppeteerPage extends IBrowserPage {
         return this._page.click(selector);
     }
 
+    async getElementAttributes(selector) {
+        return this._page.evaluate(s => {
+            /* eslint-disable-next-line */
+            const element = document.querySelector(s);
+            const attributes = {};
+
+            for (let i = 0; i < element.attributes.length; i++) {
+                attributes[element.attributes[i].name] =
+                    element.attributes[i].value;
+            }
+
+            return attributes;
+        }, selector);
+    }
+
+    async getElementCotent(selector) {
+        /* eslint-disable-next-line */
+        return this._page.evaluate(s => document.querySelector(s).innerHTML, selector);
+    }
+
     async getElement(selector, timeout = 10 * 1000) {
         return this._page.waitForSelector(selector, { timeout });
     }

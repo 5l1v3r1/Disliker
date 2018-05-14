@@ -25,7 +25,7 @@ module.exports = (app, passport) => {
     passport.use(new GoogleStrategy({
         clientID: config.get('googleClientId'),
         clientSecret: config.get('googleClientSecret'),
-        callbackURL: 'http://localhost:8080/return'
+        callbackURL: 'http://disliker.asuscomm.com:8080/return'
     }, async (accessToken, refreshToken, profile, callback) => {
         let user = await User.findOne({ googleId: profile.id });
 

@@ -1,6 +1,5 @@
 'use strict';
 
-require('dotenv');
 const fs = require('fs');
 const puppeteer = require('puppeteer');
 
@@ -10,7 +9,7 @@ const PuppeteerBrowser = require('./HES/PuppeteerBrowser');
 (async () => {
     const json = JSON.parse(fs.readFileSync('accounts.json', 'utf8'));
     const browser = await puppeteer.launch({
-        executablePath: '/Applications/Google Chrome Canary.app/Contents/MacOS/Google Chrome Canary',
+        executablePath: 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe',
         headless: false
     });
 
