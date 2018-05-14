@@ -14,6 +14,7 @@ class YoutubeHumanEmulator extends HumanEmulator {
         this._failLoginPageUrl = 'https://accounts.google.com/ServiceLogin?hl=en&flowName=GlifWebSignIn&flowEntry=ServiceLogin';
     }
 
+    /* eslint-disable-next-line */
     async loginAccount({ login, password }) {
         const page = await this._browser.navigate(this._loginPageUrl);
 
@@ -31,10 +32,11 @@ class YoutubeHumanEmulator extends HumanEmulator {
         await delay(3 * 1000);
 
         if (page.url.startsWith(this._failLoginPageUrl)) {
+            await page.close();
             throw new Error('Can\'t login!');
         }
 
-        return new YoutubeHumanEmulatorAccount(page);
+        return new YoutubeHumanEmulatorAccount(page, { login, password });
     }
 
     /* eslint-disable-next-line */

@@ -1,0 +1,25 @@
+<form>
+    <div class="row">
+        <div class="col">
+            <input v-model="videoId" type="text" id="video-id" class="form-control" placeholder="video id"/>
+        </div>
+        <div class="col action-selector">
+            <div class="form-check form-check-inline ">
+                <input v-model="action" value="0" type="radio" class="form-check-input" id="like-radio" name="action"/>
+                <label class="form-check-label" for="like-radio">
+                    <i class="fa fa-thumbs-up"></i>
+                </label>
+                &nbsp;
+                &nbsp;
+                &nbsp;
+                <input v-model="action" value="1" type="radio" class="form-check-input" id="dislike-radio" name="action"/>
+                <label class="form-check-label" for="dislike-radio">
+                    <i class="fa fa-thumbs-down"></i>
+                </label>
+            </div>
+        </div>
+        <div class="col">
+            <input type="button" v-on:click="likeOrDis" class="btn btn-primary" value="Start"/>
+        </div>
+    </div>
+</form>

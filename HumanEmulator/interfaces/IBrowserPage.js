@@ -18,6 +18,18 @@ class IBrowserPage {
 
     /**
      * @param {string} selector
+     * @return {Promise<string[]>}
+     */
+    async getElementAttributes(selector) {}
+
+    /**
+     * @param {string} selector
+     * @return {Promise<string>}
+     */
+    async getElementContent(selector) {}
+
+    /**
+     * @param {string} selector
      * @param {number} timeout?
      * @return {Promise<HTMLElement>}
      */
