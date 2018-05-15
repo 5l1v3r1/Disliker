@@ -10,7 +10,9 @@ const ProxySchema = new mongoose.Schema({
     city: {
         type: String,
         index: true
-    }
+    },
+    working: Boolean,
+    http: Boolean
 });
 
 module.exports = mongoose.model('Proxy', ProxySchema);
