@@ -6,6 +6,10 @@ const { JSDOM } = require('jsdom');
 const IProxyGetter = require('../interfaces/IProxyGetter');
 
 class FreeProxyListNetProxyGetter extends IProxyGetter {
+    get serviceName() {
+        return 'FreeProxyList.Net';
+    }
+
     constructor() {
         super();
 

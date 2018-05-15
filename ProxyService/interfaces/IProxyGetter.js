@@ -4,6 +4,7 @@
 'use strict';
 
 class IProxyGetter {
+    get serviceName() {}
 
     /**
      * @returns {Promise<Proxy[]>}

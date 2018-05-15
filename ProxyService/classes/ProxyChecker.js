@@ -3,7 +3,7 @@
 const request = require('request-promise');
 
 class ProxyChecker {
-    static async checkProxy(ip, port) {
+    static async check(ip, port) {
         const http = await check(ip, port, 'http://www.google.com/');
         const https = await check(ip, port, 'https://www.google.com/');
 

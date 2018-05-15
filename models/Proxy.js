@@ -3,8 +3,16 @@
 const mongoose = require('mongoose');
 
 const ProxySchema = new mongoose.Schema({
-    ip: String,
-    port: String,
+    ip: {
+        type: String,
+        index: true,
+        required: true
+    },
+    port: {
+        type: String,
+        index: true,
+        required: true
+    },
     country: String,
     region: String,
     city: {
