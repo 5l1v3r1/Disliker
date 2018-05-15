@@ -28,6 +28,7 @@
     "hbs-utils": "0.0.4"
   },
   "scripts": {
+    "lint:fix": "eslint . --fix",
     "lint": "eslint .",
     "test": "npm run lint",
     "start:web": "node ./WebInterface/index.js",
